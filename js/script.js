@@ -1,3 +1,50 @@
+const temaSalvo = localStorage.getItem("tema");
+const prefereEscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (temaSalvo === "dark" || temaSalvo === "light") {
+    document.documentElement.setAttribute("data-theme", temaSalvo);
+} else if (prefereEscuro) {
+    document.documentElement.setAttribute("data-theme", "dark");
+}
+
+const botaoTema = document.createElement("button");
+
+botaoTema.type = "button";
+botaoTema.className = "botao-tema";
+botaoTema.setAttribute("aria-pressed", "false");
+
+function atualizarBotaoTema() {
+    const temaAtual = document.documentElement.getAttribute("data-theme");
+    const modoEscuroAtivo = temaAtual === "dark";
+
+    botaoTema.textContent = modoEscuroAtivo
+        ? "Ativar modo claro"
+        : "Ativar modo escuro";
+
+    botaoTema.setAttribute(
+        "aria-pressed",
+        String(modoEscuroAtivo)
+    );
+}
+
+const navegacao = document.querySelector(".site-header nav");
+
+if (navegacao) {
+    navegacao.insertAdjacentElement("afterend", botaoTema);
+
+    atualizarBotaoTema();
+
+    botaoTema.addEventListener("click", () => {
+        const temaAtual = document.documentElement.getAttribute("data-theme");
+        const novoTema = temaAtual === "dark" ? "light" : "dark";
+
+        document.documentElement.setAttribute("data-theme", novoTema);
+        localStorage.setItem("tema", novoTema);
+
+        atualizarBotaoTema();
+    });
+}
+
 function somenteNumeros(valor) {
     return valor.replace(/\D/g, "");
 }
