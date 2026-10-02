@@ -1,0 +1,324 @@
+:root {
+    --fundo: #f6f7fb;
+    --superficie: #ffffff;
+    --texto: #202534;
+    --texto-suave: #5d6472;
+    --destaque: #2856c7;
+    --destaque-escuro: #1d4197;
+    --borda: #dfe3ea;
+    --sombra: 0 10px 25px rgba(32, 37, 52, 0.08);
+    --raio: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+a {
+    color: var(--destaque);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #8fb1ff;
+    outline-offset: 2px;
+}
+
+.site-header {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+}
+
+.menu {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 42px;
+    padding: 52px 0 36px;
+}
+
+.hero h1,
+.page-intro h1 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.15;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.hero p,
+.page-intro p,
+.conteudo p,
+.card p,
+.project-card p,
+.action-section p {
+    color: var(--texto-suave);
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--destaque) !important;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: var(--destaque);
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: var(--destaque-escuro);
+}
+
+.botao-secundario {
+    background: #344054;
+}
+
+.hero-imagem img,
+.project-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.hero-imagem {
+    margin: 0;
+}
+
+.hero-imagem figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.conteudo,
+.cards,
+.projects,
+.action-section,
+.formulario {
+    margin-top: 32px;
+}
+
+.conteudo,
+.action-section,
+.formulario {
+    background: var(--superficie);
+    padding: 28px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: var(--superficie);
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.page-intro {
+    padding: 38px 0 16px;
+    max-width: 800px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 24px;
+    background: var(--superficie);
+    padding: 22px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.project-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.action-section ul {
+    padding-left: 20px;
+    color: var(--texto-suave);
+}
+
+.formulario {
+    display: grid;
+    gap: 24px;
+}
+
+fieldset {
+    margin: 0;
+    padding: 22px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: 700;
+}
+
+.campo,
+.campo-pequeno,
+.campo-largo {
+    margin-top: 16px;
+}
+
+.formulario fieldset > .campo:first-of-type,
+.formulario fieldset > .campo-pequeno:first-of-type {
+    margin-top: 4px;
+}
+
+.campo label,
+.campo-pequeno label,
+.campo-largo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    font: inherit;
+    color: var(--texto);
+    background: #fff;
+    border: 1px solid #bac1cc;
+    border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--destaque);
+}
+
+.observacao {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.mensagem-sucesso {
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px solid #b8d9c0;
+    border-radius: 8px;
+    background: #edf8f0;
+    color: #1f5f30;
+}
+
+.site-footer {
+    margin-top: 30px;
+    padding: 34px 24px;
+    background: #1f2633;
+    color: #fff;
+}
+
+.site-footer > * {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+.site-footer address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+    .site-header,
+    .hero,
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: auto;
+    }
+}
