@@ -35,8 +35,9 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid #8fb1ff;
-    outline-offset: 2px;
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px var(--destaque-escuro);
 }
 
 .site-header {
