@@ -1,0 +1,14 @@
+{
+  "name": "projeto-ong",
+  "version": "1.0.0",
+  "description": "Projeto web do Instituto Esperança desenvolvido na Experiência Prática IV.",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.2"
+  }
+}
